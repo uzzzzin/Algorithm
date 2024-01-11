@@ -19,8 +19,6 @@ int solution(int cacheSize, vector<string> cities)
             cities[i][j] = tolower(cities[i][j]);
     }
     
-    // [ "seoul", "seoul", "seoul", "tokyo", "seoul", "tokyo" ]
-    
     cache.push_back(cities[0]);
     accTime += 5;
     
@@ -37,7 +35,8 @@ int solution(int cacheSize, vector<string> cities)
         else // cache miss ㅠㅠ
         {
             if(cacheSize <= cache.size())
-                cache.erase(cache.begin());    
+                cache.erase(cache.begin()); 
+            
             cache.push_back(cities[i]);
             accTime += 5;
         }
